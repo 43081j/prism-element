@@ -40,10 +40,12 @@ This flow is supported by [`<marked-element>`](https://github.com/PolymerElement
     }
 
     connectedCallback() {
+      super.connectedCallback();
       (this.parentElement || this.parentNode.host).addEventListener(HIGHLIGHT_EVENT, this._handler);
     }
 
     disconnectedCallback() {
+      super.disconnectedCallback();
       (this.parentElement || this.parentNode.host).removeEventListener(HIGHLIGHT_EVENT, this._handler);
     }
 
